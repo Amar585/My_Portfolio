@@ -1,32 +1,35 @@
 import type { Metadata } from "next";
-import { Inter, Source_Code_Pro } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const sourceCodePro = Source_Code_Pro({
-  variable: "--font-source-code",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Amar Gupta - Software Engineer",
-  description: "Portfolio of Amar Gupta, Software Engineer specializing in secure web applications.",
+  title: "Amar Gupta - Software Developer Portfolio",
+  description: "Software Developer from Melbourne, VIC. Full-stack web development specialist with expertise in JavaScript, React, Next.js, Python, and more. Graduate from Melbourne Institute of Technology.",
+  keywords: ["Software Developer", "Full-stack Developer", "JavaScript", "React", "Next.js", "Python", "Melbourne", "Web Development"],
+  authors: [{ name: "Amar Gupta" }],
+  openGraph: {
+    title: "Amar Gupta - Software Developer Portfolio",
+    description: "Software Developer from Melbourne, VIC. Full-stack web development specialist with expertise in JavaScript, React, Next.js, Python, and more.",
+    type: "website",
+    locale: "en_AU",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amar Gupta - Software Developer Portfolio",
+    description: "Software Developer from Melbourne, VIC. Full-stack web development specialist.",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${sourceCodePro.variable} antialiased`}
-      >
+    <html lang="en" className="scroll-smooth">
+      <body className={inter.className}>
         {children}
       </body>
     </html>
